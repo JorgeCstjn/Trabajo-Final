@@ -1,12 +1,12 @@
-import BookService from './services/BookService';
-const bookService = new BookService();
+import RegistrarService from './services/RegistrarService';
+const RegistrarService = new RegistrarService();
 
 import { format } from 'timeago.js';
 
 class UI {
 
   async renderBooks() {
-    const books = await bookService.getBooks();
+    const books = await RegistrarService.getBooks();
     const booksCardContainer = document.getElementById('books-cards');
     booksCardContainer.innerHTML = '';
     books.forEach((book) => {
@@ -36,7 +36,7 @@ class UI {
   }
 
   async addANewBook(book) {
-    await bookService.postBook(book);
+    await RegistrarService.postBook(book);
     this.renderBooks();
     this.clearBookForm();
   }
@@ -64,7 +64,7 @@ class UI {
   }
 
   async deleteBook(bookId) {
-    await bookService.deleteBook(bookId);
+    await RegistrarService.deleteBook(bookId);
     this.renderBooks();
   }
 
