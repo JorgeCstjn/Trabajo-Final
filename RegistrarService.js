@@ -18,7 +18,7 @@ class RegistrarService {
         const data = await res.json();
     }
 
-    async deleteBook(bookId) {
+    async deleteBook(Registrar) {
         const res = await fetch(`${this.URI}/${bookId}`, {
             headers: {
                 'Content-Type': 'application/json',
