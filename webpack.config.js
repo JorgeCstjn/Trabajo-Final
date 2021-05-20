@@ -23,8 +23,22 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin( {
+      name: 'index2.html',
+      template: './frontend/index2.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
+    }),
+    new HtmlWebpackPlugin( {
+      name: 'index.html',
       template: './frontend/index.html',
+      chunks: [],
       minify: {
         collapseWhitespace: true,
         removeComments: true,

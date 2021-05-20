@@ -10,7 +10,7 @@ class RegistrarService {
         return Registrarse;
     }
 
-    async postBook(book) {
+    async postBook(Registrar) {
         const res = await fetch(this.URI, {
             method: 'POST',
             body: RegistrarService
